@@ -91,7 +91,7 @@ graph TD
     API -->|JSON Response| UI
     UI -->|Display Code| User
     
-    style User fill:#f9f,stroke:#333,,stroke-width:2px
+    style User fill:#f9f,stroke:#333,stroke-width:2px
     style UI fill:#bbf,stroke:#333,stroke-width:2px
     style API fill:#dfd,stroke:#333,stroke-width:2px
     style Ollama fill:#fdd,stroke:#333,stroke-width:2px
