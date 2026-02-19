@@ -76,13 +76,13 @@ python -m http.server 8080 --directory frontend
 
 ```mermaid
 graph TD
-    User[User] -->|Pastes Java Code| UI[Frontend (HTML/JS)]
-    UI -->|POST /convert| API[Backend (FastAPI)]
+    User -->|Pastes Java Code| UI
+    UI -->|POST /convert| API
     
     subgraph "Core Engine"
     API -->|Load SOP| SOP[System Prompt SOP]
     API -->|Construct Prompt| LLM_Client[LLM Client]
-    LLM_Client -->|Query| Ollama[Ollama (Local LLM)]
+    LLM_Client -->|Query| Ollama[Ollama Local LLM]
     Ollama -->|Response| LLM_Client
     end
     
