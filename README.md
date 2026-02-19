@@ -74,6 +74,29 @@ python -m http.server 8080 --directory frontend
 
 ## 🏗️ Architecture
 
+```mermaid
+graph TD
+    User[User] -->|Pastes Java Code| UI[Frontend (HTML/JS)]
+    UI -->|POST /convert| API[Backend (FastAPI)]
+    
+    subgraph "Core Engine"
+    API -->|Load SOP| SOP[System Prompt SOP]
+    API -->|Construct Prompt| LLM_Client[LLM Client]
+    LLM_Client -->|Query| Ollama[Ollama (Local LLM)]
+    Ollama -->|Response| LLM_Client
+    end
+    
+    LLM_Client -->|Cleaned Code| API
+    API -->|Save File| FileSys[Output Directory]
+    API -->|JSON Response| UI
+    UI -->|Display Code| User
+    
+    style User fill:#f9f,stroke:#333,,stroke-width:2px
+    style UI fill:#bbf,stroke:#333,stroke-width:2px
+    style API fill:#dfd,stroke:#333,stroke-width:2px
+    style Ollama fill:#fdd,stroke:#333,stroke-width:2px
+```
+
 -   **Frontend:** HTML5, CSS3 (Dark Mode), Vanilla JS.
 -   **Backend:** FastAPI (Python).
 -   **AI Engine:** Ollama (CodeLlama).
