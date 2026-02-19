@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selenium 2 Playwright | B.L.A.S.T.</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <h1>Selenium ➡️ Playwright</h1>
+            <p>Powered by Local LLM (CodeLlama)</p>
+        </header>
+
+        <!-- Main Content -->
+        <main>
+            <!-- Input Section -->
+            <section class="input-section">
+                <div class="header-row">
+                    <h2>Java Source</h2>
+                    <input type="text" id="filename" placeholder="Output Filename (e.g. login.spec.ts)" value="converted.spec.ts">
+                </div>
+                <textarea id="sourceCode" placeholder="Paste your Selenium Java code here..."></textarea>
+                <div class="actions">
+                    <button id="convertBtn" class="primary-btn">
+                        <span>⚡ Convert Code</span>
+                    </button>
+                    <span id="status" class="status-text">Ready</span>
+                </div>
+            </section>
+
+            <!-- Output Section -->
+            <section class="output-section">
+                <div class="header-row">
+                    <h2>TypeScript Result</h2>
+                    <button id="copyBtn" class="secondary-btn">Copy</button>
+                </div>
+                <div class="code-editor" id="outputCode">
+                    <pre><code>// Result will appear here...</code></pre>
+                </div>
+                <div id="filePathDisplay" class="file-path"></div>
+            </section>
+        </main>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
